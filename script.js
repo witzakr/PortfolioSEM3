@@ -8,3 +8,4 @@ document.getElementById('weekSelect').addEventListener('change', function() {
         week.classList.remove('hidden');
     });
 });
+
