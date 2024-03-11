@@ -17,7 +17,7 @@ header {
 }
 
 .navbar .logo {
-    margin-left: 60px;
+    margin-left: 210px;
     font-size: 40px;
     position: absolute;
 }
@@ -39,7 +39,7 @@ header {
     color: rgb(0, 0, 0);
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 20px;
 }
 
 .navbar a:hover {
@@ -59,7 +59,7 @@ header {
 }
 
 .left {
-    margin-left: 300px; 
+    margin-left: 200px;
     margin-top: 180px;
     border-radius: 8px;
     padding: 25px;
@@ -104,7 +104,6 @@ header {
     border-radius: 8px;
     padding: 25px;
     width: 600px;
-    margin-right: 450px;
 }
 
 .image-container1 img {
@@ -161,7 +160,7 @@ header {
 
 
 .left2 {
-    margin-left: 250px; 
+    margin-left: 200px; 
     margin-top: 180px;
     border-radius: 8px;
     padding: 25px;
@@ -205,7 +204,7 @@ header {
 }
 
 .left3 {
-    margin-left: 350px; 
+    margin-left: 200px;
     margin-top: 180px;
     border-radius: 8px;
     padding: 25px;
@@ -230,17 +229,19 @@ header {
 }
 
 .image-container1 img {
-    height: 270px;
+    height: 400px;
     margin-left: 200px;
     position: absolute;
     margin-top: 30px;
+    outline: 2px solid black;
 }
 
 .image-container2 img {
     height: 320px;
     margin-top: 150px;
-    margin-left: 500px;
+    margin-left: 520px;
     position: absolute;
+    outline: 2px solid black;
 }
 
 .image-container3 img {
@@ -248,6 +249,7 @@ header {
     margin-top: 370px;
     margin-left: 220px;
     position: absolute;
+    outline: 2px solid black;
 }
 
 .weeks {
@@ -286,7 +288,7 @@ select {
 }
 
 .mainpage2 {
-    margin-left: 100px;
+    margin-left: 200px;
     animation: fadeIn 1s forwards;
     margin-top: 80px;
 }
