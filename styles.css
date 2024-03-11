@@ -178,6 +178,10 @@ header {
     margin-bottom: 30px; 
 }
 
+.left2 p {
+    font-size: 22px;
+}
+
 
 .right2 {
     margin-top: 100px; 
@@ -199,34 +203,7 @@ header {
     font-size: 30px;
 }
 
-.left2 p {
-    font-size: 22px;
-}
 
-.left3 {
-    margin-left: 200px;
-    margin-top: 180px;
-    border-radius: 8px;
-    padding: 25px;
-    width: 600px;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 0.3s;
-}
-
-
-.left3 h2 {
-    font-size: 30px;
-}
-
-
-.right3 {
-    margin-top: 80px; 
-    border-radius: 8px;
-    padding: 25px;
-    width: 600px;
-    margin-right: 450px;
-}
 
 .image-container1 img {
     height: 400px;
@@ -252,51 +229,23 @@ header {
     outline: 2px solid black;
 }
 
-.weeks {
-    display: block;
-}
-
-.weeks li {
-    margin-bottom: 10px;
-    font-size: 35px;
-    transition: margin-left 0.3s ease;
-}
-
-.weeks li:hover {
-    margin-left: 25px; 
-}
-
-.weeks li a {
-    text-decoration: none;
-    color: black;
-}
-
-.weeks li a:hover {
-    color: #23a6d5;
-}
-
-.hidden {
-    display: none;
-}
-
-select {
-    border-radius: 5px;
-    width: 250px;
-    height: 30px;
-    outline: 2px solid black;
-    font-family: "Rubik", sans-serif;
-}
-
 .mainpage2 {
-    margin-left: 200px;
     animation: fadeIn 1s forwards;
     margin-top: 80px;
+}
+
+.mainpage2 h2 {
+    margin-left: 220px;
 }
 
 .dashboard {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+}
+
+.update {
+    display: flex;
+    margin-left: 220px;
 }
 
 .work {
@@ -343,4 +292,78 @@ select {
     font-size: 30px;
 }
 
+.left4 {
+    margin-left: 200px; 
+    margin-top: 180px;
+    border-radius: 8px;
+    padding: 25px;
+    width: 500px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.3s;
+}
 
+
+.left4 h2,
+.left4 p,
+.left4 a {
+    margin-bottom: 30px; 
+}
+
+
+.right4 {
+    margin-top: 100px; 
+    border-radius: 8px;
+    padding: 25px;
+    width: 700px;
+}
+
+.image-container4 img {
+    height: 550px;
+    margin-left: 200px;
+}
+
+.left4 img {
+    height: 100px;
+}
+
+.left4 h2 {
+    font-size: 30px;
+}
+
+.left4 p {
+    font-size: 22px;
+}
+
+.button-container {
+    display: flex;
+    margin-left: 360px;
+}
+
+.button-container button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    width: 100px;
+    height: 50px;
+}
+
+.button-container button:hover {
+    background-color:#23a6d5;
+}
+
+.left4 a {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 15px 40px;
+    font-size: 20px;
+}
+
+.left4 a:hover {
+    background-color:#23a6d5;
+}
