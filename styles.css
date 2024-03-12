@@ -161,7 +161,7 @@ header {
 
 .left2 {
     margin-left: 200px; 
-    margin-top: 180px;
+    margin-top: 160px;
     border-radius: 8px;
     padding: 25px;
     width: 500px;
@@ -234,13 +234,38 @@ header {
     margin-top: 80px;
 }
 
+.container {
+    display: flex;
+    align-items: center;
+}
+
 .mainpage2 h2 {
     margin-left: 220px;
 }
 
+.container a {
+    margin-left: 50px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+
+.container a:hover {
+    background-color: #23a6d5;
+    transform: translateY(-10px); 
+    padding: 15px;
+}
+
+
 .dashboard {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
+    margin-left: 90px;
 }
 
 .update {
