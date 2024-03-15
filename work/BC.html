@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Buisness card</title>
     <link rel="stylesheet" href="../styles.css">
-    <script src="../script.js"></script>
+    <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -32,33 +32,37 @@
                 aliquid doloremque accusamus ad inventore sequi assumenda debitis possimus.
             </p>
             <div class="link-contianer">
-                <a href="#">test</a>
-                <a href="#">test</a>
-                <a href="#">test</a>
+                <a href="#">Check the PDF file</a>
             </div>
         </article>
         <article class="right4">
             <div class="image-container4">
-                <img src="../images/me.jpg" alt="blank" id="profile-image">
+                <img class="mySlides"   src="../images/BC1.jpg" alt="blank" id="profile-image">
             </div>
             <div class="button-container">
-                <button onclick="changeImage('previous')">Previous</button>
-                <button onclick="changeImage('next')">Next</button>
+                <button class="slideButton" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="slideButton" onclick="plusDivs(+1)">&#10095;</button>
             </div>
         </article>
     </section>
     <script>
         
-        var currentImageIndex = 0;
-        var images = ["../images/me.jpg", "../images/mesasf.jpg", "../images/mesasf.jpg"];
+        var slideIndex = 1;
+        showDivs(slideIndex);
 
-        function changeImage(direction) {
-            if (direction === 'next') {
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-            } else if (direction === 'previous') {
-                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            }
-            document.getElementById('profile-image').src = images[currentImageIndex];
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
         }
 
     </script>
