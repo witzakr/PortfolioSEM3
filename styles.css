@@ -63,7 +63,7 @@ header {
     margin-top: 180px;
     border-radius: 8px;
     padding: 25px;
-    width: 600px;
+    width: 500px;
     opacity: 0;
     animation: fadeIn 1s forwards;
     animation-delay: 0.3s;
@@ -181,7 +181,7 @@ header {
     margin-top: 160px;
     border-radius: 8px;
     padding: 25px;
-    width: 500px;
+    width: 680px;
     opacity: 0;
     animation: fadeIn 1s forwards;
     animation-delay: 0.3s;
@@ -259,15 +259,13 @@ header {
 .mainpage2 {
     animation: fadeIn 1s forwards;
     margin-top: 180px;
+    margin-left: 220px;
 }
+
 
 .container {
     display: flex;
     align-items: center;
-}
-
-.mainpage2 h2 {
-    margin-left: 220px;
 }
 
 .container a {
@@ -291,7 +289,6 @@ header {
 .dashboard {
     margin-top: 50px;
     display: flex;
-    justify-content: center;
 }
 
 .update {
@@ -422,3 +419,23 @@ header {
     background-color:#23a6d5;
 }
 
+/* Modify the scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #23a6d5; /* Color of the scrollbar handle */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background:#000000;
+  }
+  
