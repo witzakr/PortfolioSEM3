@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buisness card</title>
+    <title>Passionate Idea Challenge</title>
     <link rel="stylesheet" href="../styles.css">
     <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
     </header>
     <section class="mainpage">
         <article class="left4">
-            <h2>Buisness <span class="red-text">card</span></h2>
+            <h2>Passionate Idea <span class="red-text">Challenge</span></h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Dolorem, rerum doloribus quis esse laborum, ad facilis illum expedita fugiat deserunt sint totam dolores 
@@ -32,14 +32,43 @@
                 aliquid doloremque accusamus ad inventore sequi assumenda debitis possimus.
             </p>
             <div class="link-contianer">
-                <a href="../work/buisnesscard.pdf">Check the PDF file</a>
+                <a href="#">Idea 1</a>
+                <a href="#">Idea 2</a>
+                <a href="#">Idea 3</a>
             </div>
         </article>
         <article class="right4">
             <div class="image-container4">
-                <img class="mySlides"   src="../images/BC1.jpg" alt="blank" id="profile-image">
+                <img class="mySlides"   src="../images/Idea1.jpg" alt="blank" id="profile-image">
+                <img class="mySlides"   src="../images/Idea2.jpg" alt="blank" id="profile-image">
+                <img class="mySlides"   src="../images/Idea3.jpg" alt="blank" id="profile-image">
+            </div>
+            <div class="button-container">
+                <button class="slideButton" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="slideButton" onclick="plusDivs(+1)">&#10095;</button>
             </div>
         </article>
     </section>
+    <script>
+        
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+        }
+
+    </script>
 </body>
 </html>
