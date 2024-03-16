@@ -319,7 +319,7 @@ header {
     height: 300px;
     width: 500px;
     border-radius: 10px;
-    border: 4px solid #23a6d5;
+    border: 4px solid #000000;
 }
 
 .work a {
@@ -372,7 +372,10 @@ header {
 
 .image-container4 img {
     height: 550px;
+    width: 550px;
     margin-left: 200px;
+    border-radius: 5px;
+    border: 5px solid black;
 }
 
 .left4 img {
@@ -425,6 +428,8 @@ header {
     background-color:#000000;
     padding: 20px 50px;
 }
+
+
 
 /* Modify the scrollbar */
 ::-webkit-scrollbar {
