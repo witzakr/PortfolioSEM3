@@ -4,6 +4,8 @@ body {
     font-family: "Rubik", sans-serif;
 }
 
+/* Header start */
+
 header {
     margin-top: 20px;
 }
@@ -46,13 +48,17 @@ header {
     color: #23a6d5;
 }
 
+/* header end */
+
 .red-text {
-    color: #23a6d5;
+    color: #23a6d5;          /* text was originally red, but it got changed to blue, the class name stayed the same though */
 }
 
 .black-text {
     color: black;
 }
+
+/* Home page (index) */
 
 .mainpage {
     display: flex;
@@ -151,6 +157,8 @@ header {
     opacity: 0;
     animation: fadeIn 1s forwards;
 }
+ 
+/* fade effect when opening the page */
 
 @keyframes fadeIn {
     from {
@@ -175,6 +183,7 @@ header {
     animation-delay: 1.6s;
 }
 
+/* about me page */
 
 .left2 {
     margin-left: 200px; 
@@ -254,6 +263,9 @@ header {
     position: absolute;
     outline: 2px solid black;
 }
+
+
+/* work page */
 
 .mainpage2 {
     animation: fadeIn 1s forwards;
@@ -344,6 +356,8 @@ header {
     font-size: 30px;
 }
 
+/* assigments page */
+
 .left4 {
     margin-left: 200px; 
     margin-top: 180px;
@@ -433,22 +447,23 @@ header {
 
 
 
-/* Modify the scrollbar */
+/* Modifing the scrollbar */
+
 ::-webkit-scrollbar {
-    width: 12px; /* Width of the scrollbar */
+    width: 12px; 
   }
   
-  /* Track */
+
   ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Color of the track */
+    background: #f1f1f1; 
   }
   
-  /* Handle */
+
   ::-webkit-scrollbar-thumb {
-    background: #23a6d5; /* Color of the scrollbar handle */
+    background: #23a6d5; 
   }
   
-  /* Handle on hover */
+
   ::-webkit-scrollbar-thumb:hover {
     background:#000000;
   }
