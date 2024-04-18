@@ -22,7 +22,7 @@
     <section class="mainpage2">
         <div class="container">
             <h2><span class="red-text">Wo</span><span class="black-text">rk</span></h2>
-            <a href="#">Update</a>
+            <button id="updateButton">New content</button>
         </div>
         <div class="dashboard">
             <div class="work">
@@ -65,7 +65,7 @@
             <div class="work">
                 <h3>Group Project: Logo</h3>
                 <div class="content">
-                    <img src="../images/Logo.jpg" alt="blank">
+                    <img src="../images/logo6.jpg" alt="blank">
                 </div>
                 <a href="../work/logo.html">Read more</a>
             </div>
@@ -93,6 +93,61 @@
                 <a href="../work/prototype.html">Read more</a>
             </div>
         </div>
+        <div class="dashboard" id="second-submission">
+            <div class="work">
+                <h3>Diorama</h3>
+                <div class="content">
+                    <img src="../images/diorama.png" alt="blank">
+                </div>
+                <a href="#">Read more</a>
+            </div>
+            <div class="work">
+                <h3>Pokemon API</h3>
+                <div class="content">
+                    <img src="../images/Pokemon.png" alt="blank">
+                </div>
+                <a href="#">Read more</a>
+            </div>
+            <div class="work">
+                <h3>Concept document</h3>
+                <div class="content">
+                    <img src="../images/concept.png" alt="blank">
+                </div>
+                <a href="#">Read more</a>
+            </div>
+        </div>
+        <div class="dashboard" id="second-submission">
+            <div class="work">
+                <h3>Research document</h3>
+                <div class="content">
+                    <img src="../images/researchdoc.png" alt="blank">
+                </div>
+                <a href="#">Read more</a>
+            </div>
+            <div class="work">
+                <h3>Personas</h3>
+                <div class="content">
+                    <img src="../images/personas.png" alt="blank">
+                </div>
+                <a href="#">Read more</a>
+            </div>
+            <div class="work">
+                <h3>Interview</h3>
+                <div class="content">
+                    <img src="../images/Interview.png" alt="blank">
+                </div>
+                <a href="#">Read more</a>
+            </div>
+        </div>
     </section>
+    <script>
+            document.getElementById('updateButton').addEventListener('click', function() {
+            // Get the section to scroll to
+            var sectionToScrollTo = document.getElementById('second-submission');
+
+            // Scroll to the section
+            sectionToScrollTo.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
