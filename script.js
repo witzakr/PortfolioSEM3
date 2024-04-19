@@ -45,4 +45,5 @@ function showDivs(n) {
 }
 
 
+
 // the code is put in the assigment html files since for some reason there are linking issues 

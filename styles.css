@@ -12,10 +12,13 @@ header {
 
 .navbar {
     background-color: rgb(255, 255, 255);
-    height: 3rem;
-    margin-top: 10px;
+    height: 100px;
     display: flex;
     align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* To make sure it appears above other content */
 }
 
 .navbar .logo {
@@ -63,6 +66,7 @@ header {
 .mainpage {
     display: flex;
     margin-bottom: 100px;
+    margin-top: 80px;
 }
 
 .left {
