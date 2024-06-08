@@ -210,6 +210,10 @@ header {
 }
 
 
+.links-container a {
+    margin-right: 50px;
+}
+
 
 .left2 h2,
 .left2 p,
