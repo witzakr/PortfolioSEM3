@@ -290,7 +290,6 @@ header {
     margin-left: 220px;
 }
 
-
 .container {
     display: flex;
     align-items: center;
@@ -308,18 +307,28 @@ header {
     font-size: 20px;
 }
 
-
 .container button:hover {
     background-color: #000000;
     transform: translateY(-1px); 
     padding: 20px;
 }
 
-
 .dashboard {
     margin-top: 50px;
     display: flex;
     margin-bottom: 50px;
+}
+
+.divider {
+    position: relative;
+}
+
+hr {
+    width: 90%;
+    height: 5px;
+    background-color: #23a6d5; /* Optional: set a color */
+    border: none; /* Optional: remove default border */
+    margin-left: 0; /* Move to the left */
 }
 
 .update {
@@ -366,7 +375,6 @@ header {
     transition: transform 0.3s ease, padding 0.5s cubic-bezier(0.5, 0, 0.1, 1);
 }
 
-
 .work a:hover {
     background-color: #000000;
     padding: 20px 50px;
@@ -375,6 +383,7 @@ header {
 .mainpage2 h2 {
     font-size: 30px;
 }
+
 
 /* assigments page */
 
