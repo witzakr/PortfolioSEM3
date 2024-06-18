@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GP: Contract</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="logo"><span class="red-text">wit</span><span class="black-text">zakr</span></a>
+            <menu>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../html/aboutme.html">About</a></li>
+                <li><a href="../html/work.html"><span class="red-text">Work</span></a></li>
+                <li><a href="#">Contact</a></li>
+            </menu>
+        </nav>
+    </header>
+    <section class="mainpage">
+        <article class="left4">
+            <h2>Group Projcet: <span class="red-text">Contract</span></h2>
+            <p>
+                The group assignment was to create a contract for our project. 
+                We worked together to outline our commitments, core values, group rules, how we'll measure success, 
+                and the quality standards we'll follow. Once we finished, everyone in the group signed it, showing our agreement to stick to the contract and work together effectively. 
+                It will help us stay organized and on the same page throughout the project.
+            </p>
+            <div class="link-contianer">
+                <a href="https://docs.google.com/document/d/1_siMLMkcxN3fGD5gBEhDCB6-sORBOBPhhVQEqIDIgxM/edit?usp=sharing">Docs file</a>
+            </div>
+        </article>
+        <article class="right4">
+            <div class="image-container4">
+                <img class="mySlides"   src="../images/Contract.jpg" alt="blank" id="profile-image">
+                <img class="mySlides"   src="../images/Contract2.jpg" alt="blank" id="profile-image">
+                <img class="mySlides"   src="../images/Conract3.jpg" alt="blank" id="profile-image">
+            </div>
+            <div class="button-container">
+                <button class="slideButton" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="slideButton" onclick="plusDivs(+1)">&#10095;</button>
+            </div>
+        </article>
+    </section>
+    <footer class="blue-footer">
+    </footer>
+    <script>
+        
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+        }
+
+    </script>
+</body>
+</html>
