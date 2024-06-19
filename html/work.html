@@ -6,6 +6,8 @@
     <title>Work</title>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="../filters.js"></script>
+    <script src="../popup.js"></script>
 </head>
 <body>
     <header>
@@ -39,9 +41,18 @@
         </div>
         <div id="iw">
             <div class="divider">
-                <h3>Individual work</h3>
+                <div class="header-container">
+                    <h3>Individual work</h3>
+                    <a href="#" id="description-link">Description</a>
+                </div>
                 <hr>
-            </div>
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <span class="close-button">&times;</span>
+                        <p>Hello world</p>
+                    </div>
+                </div>
+            </div>                                             
             <div class="dashboard">
                 <div class="work">
                     <h3>Buisness card</h3>
@@ -123,8 +134,17 @@
         </div>
         <div id="gr">
             <div class="divider">
-                <h3>Group Project</h3>
+                <div class="header-container">
+                    <h3>Group Project</h3>
+                    <a href="#" id="description-link2">Description</a>
+                </div>
                 <hr>
+                <div id="popup2" class="popup">
+                    <div class="popup-content">
+                        <span class="close-button">&times;</span>
+                        <p>Popup 2 content here</p>
+                    </div>
+                </div>
             </div>
             <div class="dashboard">
                 <div class="work">
@@ -184,8 +204,17 @@
         </div>
         <div id="pp">
             <div class="divider">
-                <h3>Passionate Project</h3>
+                <div class="header-container">
+                    <h3>Passionate Project</h3>
+                    <a href="#" id="description-link3">Description</a>
+                </div>
                 <hr>
+                <div id="popup3" class="popup">
+                    <div class="popup-content">
+                        <span class="close-button">&times;</span>
+                        <p>Another content here123</p>
+                    </div>
+                </div>
             </div>
             <div class="dashboard">
                 <div class="work">
@@ -207,34 +236,6 @@
 
             // Scroll to the section
             sectionToScrollTo.scrollIntoView({ behavior: 'smooth' });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const individualWorkCheckbox = document.getElementById('individualWork');
-            const groupProjectCheckbox = document.getElementById('groupProject');
-            const passionateProjectCheckbox = document.getElementById('passionateProject');
-
-            individualWorkCheckbox.addEventListener('change', () => {
-                toggleDisplay(individualWorkCheckbox, ['gr', 'pp']);
-            });
-
-            groupProjectCheckbox.addEventListener('change', () => {
-                toggleDisplay(groupProjectCheckbox, ['iw', 'pp']);
-            });
-
-            passionateProjectCheckbox.addEventListener('change', () => {
-                toggleDisplay(passionateProjectCheckbox, ['iw', 'gr']);
-            });
-
-            function toggleDisplay(checkbox, elementIds) {
-                elementIds.forEach(id => {
-                    const element = document.getElementById(id);
-                    if (element) {
-                        element.style.display = checkbox.checked ? 'none' : '';
-                    }
-                });
-            }
         });
     </script>
 </body>
