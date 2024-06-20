@@ -88,8 +88,6 @@ header {
     animation-delay: 0.3s;
 }
 
-
-
 .left h2,
 .left p,
 .left a {
@@ -128,18 +126,20 @@ header {
 }
 
 .image-container1 img {
-    height: 270px;
+    height: 400px;
     margin-left: 200px;
     position: absolute;
     margin-top: 30px;
+    outline: 2px solid black;
     transition: height 0.5s ease;
 }
 
 .image-container2 img {
     height: 320px;
     margin-top: 150px;
-    margin-left: 500px;
+    margin-left: 520px;
     position: absolute;
+    outline: 2px solid black;
     transition: height 0.5s ease;
 }
 
@@ -148,11 +148,13 @@ header {
     margin-top: 370px;
     margin-left: 220px;
     position: absolute;
+    outline: 2px solid black;
     transition: height 0.5s ease;
 }
 
+
 .image-container1 img:hover {
-    height: 470px
+    height: 470px;
 }
 
 .image-container2 img:hover {
@@ -197,6 +199,7 @@ header {
 }
 
 /* about me page */
+
 
 .left2 {
     margin-left: 200px; 
@@ -257,30 +260,33 @@ header {
 }
 
 
-.image-container1 img {
-    height: 400px;
-    margin-left: 200px;
-    position: absolute;
-    margin-top: 30px;
-    outline: 2px solid black;
+.blue-footer a {
+    padding: 0;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    margin-right: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 5px;
+    transition: transform 0.1s ease, padding 0.3s cubic-bezier(0.5, 0, 0.1, 1);
+    text-decoration: none;
 }
 
-.image-container2 img {
-    height: 320px;
-    margin-top: 150px;
-    margin-left: 520px;
-    position: absolute;
-    outline: 2px solid black;
+.blue-footer a:hover {
+    transform: translateY(-1px); 
+    padding: 15px;
 }
 
-.image-container3 img {
-    height: 220px;
-    margin-top: 370px;
-    margin-left: 220px;
-    position: absolute;
-    outline: 2px solid black;
+#firstpage {
+    background-color: #000000;
+    color: white;
 }
 
+#secpage {
+    background-color: #000000;
+    color: white;
+}
 
 /* work page */
 
@@ -305,6 +311,7 @@ header {
     transition: transform 0.3s ease, padding 0.5s cubic-bezier(0.5, 0, 0.1, 1);
     border: none;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .container button:hover {
@@ -313,11 +320,16 @@ header {
     padding: 20px;
 }
 
+.checkbox-group {
+    margin-left: 10px;
+}
+
 .dashboard {
     margin-top: 50px;
     display: flex;
     margin-bottom: 50px;
 }
+
 
 .divider {
     position: relative;
@@ -458,13 +470,7 @@ hr {
     width: 700px;
 }
 
-
-
 .right4 img {
-    height: 550px;
-    width: 550px;
-    margin-left: 200px;
-    border-radius: 5px;
     border: 3px solid black;
 }
 
@@ -551,4 +557,37 @@ hr {
     bottom: 0;
     width: 100%;
 
+}
+
+/* Scroll-to-top button */
+#scrollToTopButton {
+    display: none; /* Initially hidden */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #23a6d5;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 99;
+    transition: height 0.5s ease;
+}
+
+#scrollToTopButton svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+#scrollToTopButton:hover {
+    height: 50px;
+}
+
+/* Show the button when the page is scrolled */
+.scroll-visible #scrollToTopButton {
+    display: block;
 }

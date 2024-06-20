@@ -8,8 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="../filters.js"></script>
     <script src="../popup.js"></script>
+    <script src="../topbutton.js"></script>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <a class="logo" href="../index.html"><span class="red-text">wit</span><span class="black-text">zakr</span></a>
@@ -20,10 +22,12 @@
             </menu>
         </nav>
     </header>
+
     <section class="mainpage2">
+
         <div class="container">
             <h2><span class="red-text">Wo</span><span class="black-text">rk</span></h2>
-            <button id="updateButton">New content</button>
+            <button id="resetButton">Reset filters</button>
             <div class="checkbox-group">
                 <div class="checkbox-item">
                     <input type="checkbox" id="individualWork" name="workType" value="individualWork">
@@ -39,6 +43,7 @@
                 </div>
             </div>
         </div>
+        
         <div id="iw">
             <div class="divider">
                 <div class="header-container">
@@ -132,6 +137,7 @@
                 </div>
             </div>
         </div>
+
         <div id="gr">
             <div class="divider">
                 <div class="header-container">
@@ -202,6 +208,7 @@
                 </div>
             </div>
         </div>
+
         <div id="pp">
             <div class="divider">
                 <div class="header-container">
@@ -226,17 +233,15 @@
                 </div>
             </div>
         </div>
+
     </section>
+
+    <button id="scrollToTopButton" onclick="scrollToTop()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 2L0 14h8v8h8v-8h8L12 2zm0 12.83L4.83 20H7v4h10v-4h2.17L12 14.83z"/></svg>
+    </button>
+
     <footer class="blue-footer">
     </footer>
-    <script>
-            document.getElementById('updateButton').addEventListener('click', function() {
-            // Get the section to scroll to
-            var sectionToScrollTo = document.getElementById('third-submission');
-
-            // Scroll to the section
-            sectionToScrollTo.scrollIntoView({ behavior: 'smooth' });
-        });
-    </script>
+    
 </body>
 </html>
