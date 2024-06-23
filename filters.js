@@ -1,60 +1,107 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    const individualWorkCheckbox = document.getElementById('individualWork');
-    const groupProjectCheckbox = document.getElementById('groupProject');
-    const passionateProjectCheckbox = document.getElementById('passionateProject');
-    const resetButton = document.getElementById('resetButton');
+document.addEventListener('DOMContentLoaded', function() {
+    const checkboxes = document.querySelectorAll('.checkbox[type="checkbox"]');
+    const sectors = document.querySelectorAll('.sector');
 
-    individualWorkCheckbox.addEventListener('change', updateDisplay);
-    groupProjectCheckbox.addEventListener('change', updateDisplay);
-    passionateProjectCheckbox.addEventListener('change', updateDisplay);
+    function filterWorks() {
+        const checkedBoxes = Array.from(checkboxes).filter(checkbox => checkbox.checked);
 
-    resetButton.addEventListener('click', resetDisplay);
+        if (checkedBoxes.length === 0) {
+            // If no checkboxes are checked, show all sectors and all works within them
+            sectors.forEach(sector => {
+                sector.style.display = 'block';
+                sector.querySelectorAll('.work').forEach(work => work.style.display = 'flex');
+            });
+            return;
+        }
 
-    updateDisplay(); // Initial call to display all elements
-});
+        const mainFilters = ['individualWork', 'groupProject', 'passionateProject'];
+        const subFilters = ['UX&UI', 'GraphicDesign', 'Front-end'];
 
-function updateDisplay() {
-    const individualWorkCheckbox = document.getElementById('individualWork');
-    const groupProjectCheckbox = document.getElementById('groupProject');
-    const passionateProjectCheckbox = document.getElementById('passionateProject');
+        const checkedMainFilters = checkedBoxes.filter(checkbox => mainFilters.includes(checkbox.value));
+        const checkedSubFilters = checkedBoxes.filter(checkbox => subFilters.includes(checkbox.value));
 
-    const iwChecked = individualWorkCheckbox.checked;
-    const grChecked = groupProjectCheckbox.checked;
-    const ppChecked = passionateProjectCheckbox.checked;
+        // Hide all sectors first
+        sectors.forEach(sector => sector.style.display = 'none');
 
-    const iwElement = document.getElementById('iw');
-    const grElement = document.getElementById('gr');
-    const ppElement = document.getElementById('pp');
+        // Determine which sectors to show based on main filters
+        const sectorsToShow = new Set();
+        if (checkedMainFilters.length > 0) {
+            checkedMainFilters.forEach(checkbox => {
+                if (checkbox.value === 'individualWork') {
+                    sectorsToShow.add('iw');
+                } else if (checkbox.value === 'groupProject') {
+                    sectorsToShow.add('gp');
+                } else if (checkbox.value === 'passionateProject') {
+                    sectorsToShow.add('pp');
+                }
+            });
+        } else if (checkedSubFilters.length > 0) {
+            // If only sub-filters are checked, show all sectors initially
+            sectors.forEach(sector => sector.style.display = 'block');
+        }
 
-    if (!iwChecked && !grChecked && !ppChecked) {
-        // If no checkboxes are checked, display all elements
-        iwElement.style.display = '';
-        grElement.style.display = '';
-        ppElement.style.display = '';
-    } else {
-        // Toggle display based on checkboxes
-        iwElement.style.display = iwChecked ? '' : 'none';
-        grElement.style.display = grChecked ? '' : 'none';
-        ppElement.style.display = ppChecked ? '' : 'none';
+        // Display sectors and works based on filters
+        sectorsToShow.forEach(sectorId => {
+            const sectorElement = document.getElementById(sectorId);
+            sectorElement.style.display = 'block';
+        });
+
+        sectors.forEach(sectorElement => {
+            // Hide all works initially
+            sectorElement.querySelectorAll('.work').forEach(work => work.style.display = 'none');
+
+            // Show works that match the additional filters
+            if (checkedSubFilters.length > 0) {
+                checkedSubFilters.forEach(checkbox => {
+                    if (checkbox.value === 'UX&UI') {
+                        sectorElement.querySelectorAll('#ui').forEach(work => work.style.display = 'flex');
+                    } else if (checkbox.value === 'GraphicDesign') {
+                        sectorElement.querySelectorAll('#gd').forEach(work => work.style.display = 'flex');
+                    } else if (checkbox.value === 'Front-end') {
+                        sectorElement.querySelectorAll('#fe').forEach(work => work.style.display = 'flex');
+                    }
+                });
+            }
+
+            // If no sub-filters are checked, show all works within the sector
+            if (checkedSubFilters.length === 0) {
+                sectorElement.querySelectorAll('.work').forEach(work => work.style.display = 'flex');
+            }
+        });
+
+        // Special case: If only sub-filters are checked, show matching works across all sectors
+        if (checkedMainFilters.length === 0 && checkedSubFilters.length > 0) {
+            sectors.forEach(sectorElement => {
+                checkedSubFilters.forEach(checkbox => {
+                    if (checkbox.value === 'UX&UI') {
+                        sectorElement.querySelectorAll('#ui').forEach(work => work.style.display = 'flex');
+                    } else if (checkbox.value === 'GraphicDesign') {
+                        sectorElement.querySelectorAll('#gd').forEach(work => work.style.display = 'flex');
+                    } else if (checkbox.value === 'Front-end') {
+                        sectorElement.querySelectorAll('#fe').forEach(work => work.style.display = 'flex');
+                    }
+                });
+            });
+        }
     }
-}
 
-function resetDisplay() {
-    const individualWorkCheckbox = document.getElementById('individualWork');
-    const groupProjectCheckbox = document.getElementById('groupProject');
-    const passionateProjectCheckbox = document.getElementById('passionateProject');
+    function resetDisplay() {
+        // Reset all checkboxes
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = false;
+        });
 
-    // Uncheck all checkboxes
-    individualWorkCheckbox.checked = false;
-    groupProjectCheckbox.checked = false;
-    passionateProjectCheckbox.checked = false;
+        // Show all works
+        sectors.forEach(sector => {
+            sector.style.display = 'block';
+            sector.querySelectorAll('.work').forEach(work => work.style.display = 'flex');
+        });
+    }
 
-    // Show all content
-    const iwElement = document.getElementById('iw');
-    const grElement = document.getElementById('gr');
-    const ppElement = document.getElementById('pp');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', filterWorks);
+    });
 
-    iwElement.style.display = '';
-    grElement.style.display = '';
-    ppElement.style.display = '';
-}
+    const resetButton = document.getElementById('resetButton');
+    resetButton.addEventListener('click', resetDisplay);
+});
