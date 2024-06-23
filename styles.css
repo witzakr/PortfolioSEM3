@@ -168,7 +168,8 @@ header {
 .image-container1,
 .image-container2,
 .image-container3,
-.image-container4 {
+.image-container4,
+.image-container5 {
     opacity: 0;
     animation: fadeIn 1s forwards;
 }
@@ -241,6 +242,17 @@ header {
     margin-left: 200px;
     transition: height 0.5s ease;
 }
+
+#readmeContainer {
+    height: 550px;
+    width: 550px;
+    margin-left: 200px;
+    overflow-y: auto; /* Add scrollbars if content exceeds height */
+    transition: height 0.5s ease;
+    border: 1px solid #ccc; /* Optional: Add a border for styling */
+    padding: 10px; /* Optional: Add padding for spacing */
+}
+
 
 .image-container4 img:hover {
     height: 600px;
@@ -542,6 +554,16 @@ hr {
 
 .right4 img {
     border: 3px solid black;
+    cursor: pointer;
+    height: 550px;
+    margin-left: 200px;
+    width: 550px;
+    transition: height 0.5s ease, width 0.5s ease;
+}
+
+.right4 img:hover {
+    height: 600px;
+    width: 600px;
 }
 
 .left4 img {
@@ -660,4 +682,37 @@ hr {
 /* Show the button when the page is scrolled */
 .scroll-visible #scrollToTopButton {
     display: block;
+}
+
+.markdown-body {
+    line-height: 1.5;
+    font-size: 16px;
+    color: #333;
+    font-family: "Rubik", sans-serif;
+}
+
+.markdown-body a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.markdown-body a:hover {
+    text-decoration: underline;
+}
+
+.markdown-body pre {
+    background-color: #f6f8fa;
+    border-radius: 6px;
+    font-size: 85%;
+    line-height: 1.45;
+    overflow: auto;
+    padding: 16px;
+}
+
+.markdown-body code {
+    background-color: rgba(27,31,35,0.05);
+    border-radius: 3px;
+    font-size: 85%;
+    margin: 0;
+    padding: .2em .4em;
 }

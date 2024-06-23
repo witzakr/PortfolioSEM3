@@ -1,0 +1,11 @@
+{
+  "name": "portfoliosem3",
+  "version": "1.0.0",
+  "description": "import { marked } from 'marked'",
+  "main": "aboutme.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

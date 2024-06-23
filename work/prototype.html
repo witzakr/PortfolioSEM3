@@ -37,38 +37,10 @@
         <article class="right4">
             <div class="image-container4">
                 <img class="mySlides"   src="../images/Prototype2.jpg" alt="blank" id="profile-image">
-                <img class="mySlides"   src="../images/Prototype3.jpg" alt="blank" id="profile-image">
-                <img class="mySlides"   src="../images/Prototype.jpg" alt="blank" id="profile-image">
-                <img class="mySlides"   src="../images/Prototype4.jpg" alt="blank" id="profile-image">
-            </div>
-            <div class="button-container">
-                <button class="slideButton" onclick="plusDivs(-1)">&#10094;</button>
-                <button class="slideButton" onclick="plusDivs(+1)">&#10095;</button>
             </div>
         </article>
     </section>
     <footer class="blue-footer">
     </footer>
-    <script>
-        
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-        showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        if (n > x.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = x.length} ;
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        x[slideIndex-1].style.display = "block";
-        }
-
-    </script>
 </body>
 </html>

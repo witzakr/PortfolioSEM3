@@ -2,7 +2,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkboxes = document.querySelectorAll('.checkbox[type="checkbox"]');
     const sectors = document.querySelectorAll('.sector');
 
+    // Load the checkbox states from localStorage
+    function loadCheckboxStates() {
+        checkboxes.forEach(checkbox => {
+            const state = localStorage.getItem(checkbox.id);
+            checkbox.checked = state === 'true';
+        });
+    }
+
+    // Save the checkbox states to localStorage
+    function saveCheckboxStates() {
+        checkboxes.forEach(checkbox => {
+            localStorage.setItem(checkbox.id, checkbox.checked);
+        });
+    }
+
     function filterWorks() {
+        saveCheckboxStates(); // Save state on each filter change
+
         const checkedBoxes = Array.from(checkboxes).filter(checkbox => checkbox.checked);
 
         if (checkedBoxes.length === 0) {
@@ -91,6 +108,9 @@ document.addEventListener('DOMContentLoaded', function() {
             checkbox.checked = false;
         });
 
+        // Clear localStorage
+        localStorage.clear();
+
         // Show all works
         sectors.forEach(sector => {
             sector.style.display = 'block';
@@ -98,10 +118,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Event listeners
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', filterWorks);
     });
 
     const resetButton = document.getElementById('resetButton');
     resetButton.addEventListener('click', resetDisplay);
+
+    // Initial load
+    loadCheckboxStates();
+    filterWorks();
 });

@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../styles.css">
     <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
+    <script src="../readme.js"></script>
+    <script src="../images.js"></script>
 </head>
 <body>
     <header>
@@ -38,12 +41,37 @@
             </div>
         </article>
         <article class="right4">
-            <div class="image-container4">
-                <img class="mySlides"   src="../images/CounterChallenge.jpg" alt="blank" id="profile-image">
+            <div class="image-container5">
+                <img class="mySlides" src="../images/CounterChallenge.jpg" alt="blank" id="profile-image">
+                <div id="readmeContainer" class="mySlides" data-src="https://raw.githubusercontent.com/witzakr/Counter/main/README.md"></div>
+            </div>
+            <div class="button-container">
+                <button class="slideButton" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="slideButton" onclick="plusDivs(+1)">&#10095;</button>
             </div>
         </article>
     </section>
     <footer class="blue-footer">
     </footer>
+    <script>
+                var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+        }
+
+    </script>
 </body>
 </html>
