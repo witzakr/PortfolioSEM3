@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const mainFilters = ['individualWork', 'groupProject', 'passionateProject'];
-        const subFilters = ['UX&UI', 'GraphicDesign', 'Front-end'];
+        const subFilters = ['LO1', 'LO2', 'LO3', 'LO4'];
 
         const checkedMainFilters = checkedBoxes.filter(checkbox => mainFilters.includes(checkbox.value));
         const checkedSubFilters = checkedBoxes.filter(checkbox => subFilters.includes(checkbox.value));
@@ -67,15 +67,18 @@ document.addEventListener('DOMContentLoaded', function() {
             // Hide all works initially
             sectorElement.querySelectorAll('.work').forEach(work => work.style.display = 'none');
 
+            // Function to check if a work matches all checked subfilters
+            function matchesAllFilters(work) {
+                return checkedSubFilters.every(filter => {
+                    return work.classList.contains(filter.value);
+                });
+            }
+
             // Show works that match the additional filters
             if (checkedSubFilters.length > 0) {
-                checkedSubFilters.forEach(checkbox => {
-                    if (checkbox.value === 'UX&UI') {
-                        sectorElement.querySelectorAll('#ui').forEach(work => work.style.display = 'flex');
-                    } else if (checkbox.value === 'GraphicDesign') {
-                        sectorElement.querySelectorAll('#gd').forEach(work => work.style.display = 'flex');
-                    } else if (checkbox.value === 'Front-end') {
-                        sectorElement.querySelectorAll('#fe').forEach(work => work.style.display = 'flex');
+                sectorElement.querySelectorAll('.work').forEach(work => {
+                    if (matchesAllFilters(work)) {
+                        work.style.display = 'flex';
                     }
                 });
             }
@@ -89,13 +92,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Special case: If only sub-filters are checked, show matching works across all sectors
         if (checkedMainFilters.length === 0 && checkedSubFilters.length > 0) {
             sectors.forEach(sectorElement => {
-                checkedSubFilters.forEach(checkbox => {
-                    if (checkbox.value === 'UX&UI') {
-                        sectorElement.querySelectorAll('#ui').forEach(work => work.style.display = 'flex');
-                    } else if (checkbox.value === 'GraphicDesign') {
-                        sectorElement.querySelectorAll('#gd').forEach(work => work.style.display = 'flex');
-                    } else if (checkbox.value === 'Front-end') {
-                        sectorElement.querySelectorAll('#fe').forEach(work => work.style.display = 'flex');
+                sectorElement.querySelectorAll('.work').forEach(work => {
+                    if (matchesAllFilters(work)) {
+                        work.style.display = 'flex';
                     }
                 });
             });
