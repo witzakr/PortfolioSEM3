@@ -1,9 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to toggle popup visibility with animation
+    // Function to toggle popup visibility with animation and blur background
     function togglePopup(popupElement) {
+        var overlay = document.getElementById('overlay');
         if (popupElement.style.display !== 'block') {
             popupElement.style.opacity = '0';
             popupElement.style.display = 'block';
+            overlay.classList.add('active');
+            document.body.classList.add('no-scroll'); // Lock page scrolling
             setTimeout(function() {
                 popupElement.style.opacity = '1';
             }, 50); // Adjust delay as needed for transition start
@@ -11,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
             popupElement.style.opacity = '0';
             setTimeout(function() {
                 popupElement.style.display = 'none';
+                overlay.classList.remove('active');
+                document.body.classList.remove('no-scroll'); // Unlock page scrolling
             }, 300); // Adjust duration to match CSS transition duration
         }
     }
