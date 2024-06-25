@@ -4,17 +4,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Load the checkbox states from localStorage
     function loadCheckboxStates() {
+        const urlParams = new URLSearchParams(window.location.search);
         checkboxes.forEach(checkbox => {
-            const state = localStorage.getItem(checkbox.id);
+            const state = urlParams.get(checkbox.id);
             checkbox.checked = state === 'true';
         });
     }
 
     // Save the checkbox states to localStorage
     function saveCheckboxStates() {
+        const urlParams = new URLSearchParams();
         checkboxes.forEach(checkbox => {
-            localStorage.setItem(checkbox.id, checkbox.checked);
+            urlParams.set(checkbox.id, checkbox.checked);
         });
+        window.history.replaceState({}, '', `${location.pathname}?${urlParams}`);
     }
 
     function filterWorks() {
@@ -60,7 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Display sectors and works based on filters
         sectorsToShow.forEach(sectorId => {
             const sectorElement = document.getElementById(sectorId);
-            sectorElement.style.display = 'block';
+            if (sectorElement) {
+                sectorElement.style.display = 'block';
+            }
         });
 
         sectors.forEach(sectorElement => {
@@ -107,9 +112,9 @@ document.addEventListener('DOMContentLoaded', function() {
             checkbox.checked = false;
         });
 
-        // Clear localStorage
-        localStorage.clear();
-
+        // Clear URL parameters
+        window.history.replaceState({}, '', location.pathname);
+        
         // Show all works
         sectors.forEach(sector => {
             sector.style.display = 'block';

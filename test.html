@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>README Display</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css">
+    <style>
+        .markdown-body {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="readmeContainer" class="markdown-body"></div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            async function loadReadme() {
+                const readmeContainer = document.getElementById('readmeContainer');
+                const repo = 'witzakr/3JS'; // Replace with your repository
+
+                try {
+                    const response = await fetch(`https://api.github.com/repos/${repo}/readme`, {
+                        headers: {
+                            'Accept': 'application/vnd.github.v3.html+json'
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    const html = await response.text();
+                    readmeContainer.innerHTML = html;
+                } catch (error) {
+                    console.error('Error loading README.md:', error);
+                }
+            }
+
+            await loadReadme();
+        });
+    </script>
+</body>
+</html>
