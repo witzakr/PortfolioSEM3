@@ -290,7 +290,6 @@ header {
 
 
 .blue-footer a {
-    padding: 0;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     margin-right: 5px;
@@ -398,19 +397,6 @@ header {
 #map-element1:hover, #map-element2:hover, #map-element3:hover {
     height: 18px;
 }
-
-#border-colour1 {
-    border: 3px solid #ff6166;
-}
-
-#border-colour2 {
-    border: 3px solid #66ff61;
-}
-
-#border-colour3 {
-    border: 3px solid #61b5ff;
-}
-
 
 .dashboard {
     margin-top: 50px;
@@ -553,6 +539,7 @@ body.no-scroll {
     height: 300px;
     width: 500px;
     border-radius: 10px;
+    border: 3px solid black;
 }
 
 .work a {
@@ -716,6 +703,7 @@ body.no-scroll {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 99;
     transition: height 0.5s ease;
+    border: 2px solid black;
 }
 
 #scrollToTopButton svg {
