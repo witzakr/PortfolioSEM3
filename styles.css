@@ -399,10 +399,13 @@ header {
 }
 
 .dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates three equal columns */
+    gap: 20px; /* Space between items */
     margin-top: 50px;
-    display: flex;
     margin-bottom: 50px;
 }
+
 
 .divider {
     position: relative;
@@ -435,7 +438,7 @@ header {
 }
 
 hr {
-    width: 90%;
+    width: 98%;
     height: 5px;
     background-color: #23a6d5;
     border: none;
@@ -537,7 +540,7 @@ body.no-scroll {
 
 .work img {
     height: 300px;
-    width: 500px;
+    width: 100%; /* Make images take full width of their container */
     border-radius: 10px;
     border: 3px solid black;
 }
@@ -571,7 +574,7 @@ body.no-scroll {
     margin-top: 180px;
     border-radius: 8px;
     padding: 25px;
-    width: 500px;
+    width: 550px;
 }
 
 .left4 h2,
@@ -735,5 +738,36 @@ body.no-scroll {
     white-space: pre-wrap;
     word-break: break-word;
 }
+
+/* Close button styles */
+.popup-close-button {
+    /* Button styles */
+    position: absolute;
+    top: 10px;
+    right: 49%;
+    color: #23a6d5;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    transition: font-size 0.3s ease;
+    border: 3px solid black;
+    border-radius: 50%; /* Makes the border circular */
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-close-button:hover {
+    font-size: 40px;
+}
+
+.popup-close-button::after {
+    font-weight: bold; /* Ensures the "X" is bold */
+}
+
+
 
 

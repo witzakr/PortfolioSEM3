@@ -6,16 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         image.addEventListener('click', function() {
             showPopup(image.src);
         });
-
-        image.addEventListener('mouseenter', function() {
-            hoverTimeout = setTimeout(() => {
-                showPopup(image.src);
-            }, 1000);
-        });
-
-        image.addEventListener('mouseleave', function() {
-            clearTimeout(hoverTimeout);
-        });
     });
 
     function showPopup(src) {
@@ -42,12 +32,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // Append the full-size image to the overlay
         popupOverlay.appendChild(fullImage);
 
+        // Create close button
+        const closeButton = document.createElement('span');
+        closeButton.innerHTML = 'X';
+        closeButton.classList.add('popup-close-button'); // Changed the class name to popup-close-button
+        popupOverlay.appendChild(closeButton);
+
+        // Add event listener to close the popup when the overlay is clicked
+        popupOverlay.addEventListener('click', function(event) {
+            if (event.target === popupOverlay || event.target === closeButton) {
+                document.body.removeChild(popupOverlay);
+            }
+        });
+
         // Append the overlay to the body
         document.body.appendChild(popupOverlay);
-
-        // Add an event listener to close the popup when the overlay is clicked
-        popupOverlay.addEventListener('click', function() {
-            document.body.removeChild(popupOverlay);
-        });
     }
 });
