@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="../topbutton.js"></script>
     <script src="../loader.js"></script>
+    <script src="../images.js"></script>
 </head>
 <body>
     <div class="loader"></div>
@@ -44,7 +45,7 @@
         </article>
         <article class="right2">
             <div class="image-container4">
-                <img src="../images/me.jpg" alt="blank">
+                <img class="mySlides" src="../images/me.jpg" alt="blank" id="profile-image">
             </div>
         </article>
     </section>
@@ -62,7 +63,7 @@
         </article>
         <article class="right2">
             <div class="image-container4">
-                <img src="../images/IMG_5146.jpg" alt="blank">
+                <img class="mySlides" src="../images/IMG_5146.jpg" alt="blank" id="profile-image">
             </div>
         </article>
     </section>
@@ -82,14 +83,17 @@
         </article>
         <article class="right2">
             <div class="image-container4">
-                <img src="../images/spec.jpg" alt="blank">
+                <img class="mySlides" src="../images/spec.jpg" alt="blank" id="profile-image">
             </div>
         </article>
     </section>
 
     <footer class="blue-footer">
-        <a id ="firstpage" href="../html/aboutme.html">1</a>
-        <a href="../html/aboutme2.html">2</a>
+        <div class="pages">
+            <a id="firstpage" href="../html/aboutme.html">1</a>
+            <a href="../html/aboutme2.html">2</a>
+            <a href="../html/aboutme3.html">3</a>
+        </div>
     </footer>
 
     <button id="scrollToTopButton" onclick="scrollToTop()">

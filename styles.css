@@ -258,6 +258,7 @@ header {
     height: 550px;
     margin-left: 200px;
     transition: height 0.5s ease;
+    cursor: pointer;
 }
 
 #readmeContainer {
@@ -312,6 +313,11 @@ header {
 }
 
 #secpage {
+    background-color: #000000;
+    color: white;
+}
+
+#thirdpage {
     background-color: #000000;
     color: white;
 }
@@ -508,8 +514,13 @@ body.no-scroll {
     right: 10px;
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 30px;
     cursor: pointer;
+    transition: font-size 0.3s ease;
+}
+
+.popup .close-button:hover {
+    font-size: 40px;
 }
 
 
@@ -745,14 +756,11 @@ body.no-scroll {
     position: absolute;
     top: 10px;
     right: 49%;
-    color: #23a6d5;
+    color: #ffffff;
     cursor: pointer;
     font-family: Arial, sans-serif;
     font-size: 30px;
     transition: font-size 0.3s ease;
-    border: 3px solid black;
-    border-radius: 50%; /* Makes the border circular */
-    background-color: white;
     width: 40px;
     height: 40px;
     display: flex;
@@ -767,7 +775,3 @@ body.no-scroll {
 .popup-close-button::after {
     font-weight: bold; /* Ensures the "X" is bold */
 }
-
-
-
-

@@ -8,6 +8,8 @@
     <script src="../script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="../loader.js"></script>
+    <script src="../images.js"></script>
+    <script src="../topbutton.js"></script>
 </head>
 <body>
     <div class="loader"></div>
@@ -25,26 +27,61 @@
 
     <section class="mainpage">
         <article class="left2">
-            <h2>About <span class="red-text">me</span></h2>
+            <h2>Work/<span class="red-text">Life balance</span></h2>
             <p>
-                Hey there! I'm Wit Zakrzewski, a 20-year-old student at Fontys University of Applied Sciences in Eindhoven. 
-                Currently, I'm diving into the world of ICT-media design, a fascinating blend of technology and creative media. 
-                My passion lies in bridging the gap between technology and art, aiming to craft innovative solutions in the ever-evolving field of ICT-media design. 
-                Outside of my academic pursuits, you'll often find me indulging in my love for drawing, particularly simple shading techniques.
-                I'm also an avid reader, with a particular fondness for history books. 
-                Sports, ranging across various interests, hold a special place in my heart, with basketball taking the lead. 
-                Additionally, I have coding experience in Python, C#, JavaScript, HTML, and CSS, adding a tech-savvy layer to my diverse interests. 
-                My main aim right now is to complete my current course. After that, I plan to pursue a master's degree in computer science. Ultimately, I aspire to become a professional Full-stack developer.
-                So follow along with me as I venture into this captivating academic pursuit! 
+                Throughout the semester, it's expected that students will expand their knowledge and skills through their work. However, it's equally important to take breaks, 
+                clear your mind, and engage in your hobbies and interests. To me, maintaining a work/life balance is as important as my path to becoming a full-stack developer. 
+                Without it, burnout becomes a real risk, which can negatively affect both your work and your relationships. <br>
+
+                To clear my mind, I usually turn to a good book or movie, as I am an avid reader and a big fan of cinematography. 
+                I also have a passion for learning history, so I often read historical documents and explore the past to uncover unknown events. 
+                Additionally, spending time with loved ones is crucial, especially since IT work can be isolating. 
+                It's important to stay connected with others and remember the value of social interactions.
+            </p>
+        </article>
+        <article class="right2">
+            <div class="image-container4">
+                <img class="mySlides" src="../images/book.jpg" alt="blank" id="profile-image">
+            </div>
+        </article>
+    </section>
+
+    <section class="mainpage">
+        <article class="left2">
+            <h2>Finding a <span class="red-text">Mentor</span></h2>
+            <p>
+                When developing in any field, finding a mentor is very important. While it might not be the easiest task, 
+                I was lucky enough to have my sister as one. She is a full-stack developer herself and is always happy to lend a helping hand with the work I am doing. 
+                I've learned a lot from her, and she is one of the reasons why I decided to choose the IT path. I can confidently say that it was a good decision.<br>
+
+                Finding a mentor is crucial. Not everyone might be as fortunate as I am, but I highly recommend seeking one out. 
+                You can learn a lot from their experience and skills, which can significantly enhance your own development.
+            </p>
+        </article>
+        <article class="right2">
+            <div class="image-container4">
+                <img class="mySlides" src="../images/familyphoto.JPG" alt="blank" id="profile-image">
+            </div>
+        </article>
+    </section>
+
+    <section class="mainpage">
+        <article class="left2">
+            <h2>Job <span class="red-text">Market </span></h2>
+            <p>
+                At the beginning of my enrollment at Fontys ICT, I opened a LinkedIn account. It wasn't initially intended to find an IT job immediately, 
+                as I am still a beginner and recognize that clearly. Instead, it was to research job offers as my portfolio and skills grow. 
+                I have been primarily researching Full-Stack Developer jobs and learned that they are in high demand, though the skill threshold is very high. 
+                The tasks of a Full-Stack Developer are broad, combining the responsibilities of both software engineers and front-end developers. 
+                However, I am confident that becoming one is within my reach, and I am motivated to achieve this goal.
             </p>
             <div class="links-container">
-                <a href="https://github.com/witzakr/PortfolioSEM3"><img src="../images/github.png" alt="github"></a>
-                <a href="https://git.fhict.nl/I524303/PortfolioSEM3"><img src="../images/Gitlab-Logo.png" alt="gitlab"></a>
+                <a href="https://www.linkedin.com/in/w-zakrzewski/"><img src="../images/linkedin.png" alt="github"></a>
             </div>
         </article>
         <article class="right2">
             <div class="image-container4">
-                <img src="../images/me.jpg" alt="blank">
+                <img class="mySlides"   src="../images/Jobs.jpg" alt="blank" id="profile-image">
             </div>
         </article>
     </section>
@@ -53,8 +90,13 @@
         <div class="pages">
             <a href="../html/aboutme.html">1</a>
             <a id="secpage" href="../html/aboutme2.html">2</a>
+            <a href="../html/aboutme3.html">3</a>
         </div>
     </footer>
+
+    <button id="scrollToTopButton" onclick="scrollToTop()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 2L0 14h8v8h8v-8h8L12 2zm0 12.83L4.83 20H7v4h10v-4h2.17L12 14.83z"/></svg>
+    </button>
 
 </body>
 </html>
